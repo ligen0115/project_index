@@ -5,7 +5,7 @@
     <!-- 引入样式 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
   </head>
-  <base target="_blank">
+  <base target="_blank" />
   <style>
     * {
       margin: 0;
@@ -19,21 +19,39 @@
     .content {
       min-height: 500px;
     }
+
+    a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 10px;
+    }
   </style>
   <body>
     <div id="app">
       <el-card class="box-card">
-        <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tabs v-model="activeName">
           <el-tab-pane label="React" name="React">
             <div class="content">
-              <a href="https://ligen0115.github.io/netease-music-build/"><el-button plain v-text="'仿网易云音乐(移动端)'"></el-button></a>
+              <a href="https://ligen0115.github.io/netease-music-build/"
+                ><el-button plain v-text="'仿网易云音乐(移动端)'"></el-button
+              ></a>
             </div>
           </el-tab-pane>
           <el-tab-pane label="jQuery" name="jQuery">
-            <div class="content"></div>
+            <div class="content">
+              <a href="https://ligen0115.github.io/paper_plane/."><el-button plain v-text="'打砖块'"></el-button></a>
+              <a href="https://ligen0115.github.io/Break-the-Bricks/."><el-button plain v-text="'跳一跳'"></el-button></a>
+            </div>
           </el-tab-pane>
           <el-tab-pane label="JS原生" name="JS">
-            <div class="content"></div>
+            <div class="content">
+              <a href="https://ligen0115.github.io/paper_plane/."><el-button plain v-text="'像素鸟'"></el-button></a>
+              <a href="https://ligen0115.github.io/Gluttonous_Snake/."><el-button plain v-text="'贪吃蛇'"></el-button></a>
+              <a href="https://ligen0115.github.io/tetris/."><el-button plain v-text="'俄罗斯方块'"></el-button></a>
+              <a href="https://ligen0115.github.io/Fruit_Slice/."><el-button plain v-text="'切水果'"></el-button></a>
+              <a href="https://ligen0115.github.io/Jin_orchestra/."><el-button plain v-text="'劲乐团'"></el-button></a>
+            </div>
           </el-tab-pane>
         </el-tabs>
       </el-card>
@@ -48,11 +66,6 @@
       el: '#app',
       data: function() {
         return { activeName: 'React' }
-      },
-      methods: {
-        handleClick(tab, event) {
-          console.log(tab, event)
-        }
       }
     })
   </script>
