@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+  </head>
+  <base target="_blank">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #app {
+      width: 500px;
+      margin: 100px auto;
+    }
+
+    .content {
+      min-height: 500px;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <el-card class="box-card">
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="React" name="React">
+            <div class="content">
+              <a href="https://ligen0115.github.io/netease-music-build/"><el-button plain v-text="'仿网易云音乐(移动端)'"></el-button></a>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="jQuery" name="jQuery">
+            <div class="content"></div>
+          </el-tab-pane>
+          <el-tab-pane label="JS原生" name="JS">
+            <div class="content"></div>
+          </el-tab-pane>
+        </el-tabs>
+      </el-card>
+    </div>
+  </body>
+  <!-- 先引入 Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { activeName: 'React' }
+      },
+      methods: {
+        handleClick(tab, event) {
+          console.log(tab, event)
+        }
+      }
+    })
+  </script>
+</html>
